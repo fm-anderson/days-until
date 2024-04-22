@@ -1,20 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { daysUntil } from "../utils/helper";
-
-const getLocation = import.meta.env.BASE_API_URL + "ip";
-const data = await fetch(getLocation).then((res) => res.json());
-const currentDate = data.datetime;
-
-const christmasDay = new Date(new Date().getFullYear(), 11, 25);
-
-console.log(daysUntil(currentDate, christmasDay));
+import { capitalizeFirstLetter } from "../utils/helper";
+import { holidays } from "../utils/holidays";
 ---
 
 <Layout title="How Many Days Until...">
   <main>
     <h1>Home</h1>
-    <a href="/christmas" class="btn">Christmas</a>
+    <div class="flex gap-2">
+      {
+        holidays.map((item) => (
+          <a href={`/${item.key}`} class="btn">
+            {capitalizeFirstLetter(item.key)}
+          </a>
+        ))
+      }
+    </div>
+
     <ul>
       <!-- cards -->
     </ul>

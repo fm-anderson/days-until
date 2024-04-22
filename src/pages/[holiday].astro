@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import { daysUntil, getCurrentDate } from "../utils/helper";
+import { holidays } from "../utils/holidays";
+
+export async function getStaticPaths() {
+  return holidays.map((holiday) => ({
+    params: { holiday: holiday.key },
+  }));
+}
+
+const { holiday } = Astro.params;
+const holidayDetails = holidays.find((h) => h.key === holiday);
+const currentDate = await getCurrentDate();
+const days = await daysUntil(currentDate, holidayDetails.date);
+---
+
+<Layout title=`How Many Days Until ${holidayDetails.name}`>
+  <h1>{holidayDetails.name}</h1>
+  <p>Days until {holidayDetails.name}: {days}</p>
+  <Image
+    src={holidayDetails.image}
+    alt={holidayDetails.name}
+    width="500"
+    height="500"
+  />
+</Layout>
