@@ -1,10 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { daysUntil } from "../utils/helper";
+
+const getLocation = import.meta.env.BASE_API_URL + "ip";
+const data = await fetch(getLocation).then((res) => res.json());
+const currentDate = data.datetime;
+
+const christmasDay = new Date(new Date().getFullYear(), 11, 25);
+
+console.log(daysUntil(currentDate, christmasDay));
 ---
 
 <Layout title="How Many Days Until...">
   <main>
     <h1>Home</h1>
+    <a href="/christmas" class="btn">Christmas</a>
     <ul>
       <!-- cards -->
     </ul>
