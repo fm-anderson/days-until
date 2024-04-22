@@ -1,0 +1,25 @@
+{
+  "name": "days-until",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.6.3",
+    "astro-icon": "^1.1.0",
+    "tailwindcss": "^3.4.3"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.1.110",
+    "daisyui": "^4.10.2",
+    "prettier": "^3.2.5",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.14"
+  }
+}
