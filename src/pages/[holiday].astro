@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
 import { daysUntil, formatDate } from "../utils/helper";
 import { holidays } from "../utils/holidays";
 
@@ -19,10 +18,4 @@ const days = daysUntil(new Date(), holidayDetails.date);
   <h1>{holidayDetails.name}</h1>
   <p>{formatDate(holidayDetails.date)}</p>
   <p>Days until {holidayDetails.name}: {days}</p>
-  <!-- <Image
-    src={holidayDetails.image}
-    alt={holidayDetails.name}
-    width="500"
-    height="500"
-  /> -->
 </Layout>

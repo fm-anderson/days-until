@@ -1,6 +1,3 @@
-import christmasImg from "../images/christmas.jpg";
-import thanksgivingImg from "../images/thanksgiving.jpg";
-
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 
@@ -21,6 +18,7 @@ export const holidays = [
     fixed: true,
     isHoliday: true,
     date: getNextOccurrenceDate(0, 1),
+    image: null,
   },
   {
     key: "mlk-day",
@@ -30,6 +28,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(0, 15),
+    image: null,
   },
   {
     key: "valentines-day",
@@ -39,6 +38,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(1, 14),
+    image: null,
   },
   {
     key: "presidents-day",
@@ -48,6 +48,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(1, 19),
+    image: null,
   },
   {
     key: "international-womens-day",
@@ -57,6 +58,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(2, 8),
+    image: null,
   },
   {
     key: "st-patricks-day",
@@ -66,6 +68,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(2, 17),
+    image: null,
   },
   {
     key: "earth-day",
@@ -75,6 +78,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(3, 22),
+    image: null,
   },
   {
     key: "cinco-de-mayo",
@@ -84,6 +88,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(4, 5),
+    image: null,
   },
   {
     key: "memorial-day",
@@ -93,6 +98,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(4, 27),
+    image: null,
   },
   {
     key: "juneteenth",
@@ -102,6 +108,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(5, 19),
+    image: null,
   },
   {
     key: "independence-day",
@@ -111,6 +118,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(6, 4),
+    image: null,
   },
   {
     key: "labor-day",
@@ -120,6 +128,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(8, 2),
+    image: null,
   },
   {
     key: "columbus-day",
@@ -129,6 +138,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(9, 14),
+    image: null,
   },
   {
     key: "indigenous-peoples-day",
@@ -138,6 +148,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(9, 14),
+    image: null,
   },
   {
     key: "halloween",
@@ -147,6 +158,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(9, 31),
+    image: null,
   },
   {
     key: "veterans-day",
@@ -156,6 +168,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(10, 11),
+    image: null,
   },
   {
     key: "thanksgiving",
@@ -165,6 +178,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(10, 28),
+    image: "/holiday-images/thanksgiving.webp",
   },
   {
     key: "christmas-eve",
@@ -174,6 +188,7 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(11, 24),
+    image: "/holiday-images/christmas.webp",
   },
 
   {
@@ -184,6 +199,7 @@ export const holidays = [
     fixed: false,
     isHoliday: true,
     date: getNextOccurrenceDate(11, 25),
+    image: "/holiday-images/christmas.webp",
   },
   {
     key: "new-years-eve",
@@ -193,5 +209,6 @@ export const holidays = [
     fixed: true,
     isHoliday: false,
     date: getNextOccurrenceDate(11, 31),
+    image: null,
   },
 ];

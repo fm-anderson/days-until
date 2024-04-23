@@ -1,23 +1,17 @@
 ---
+import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
-import { formatKey } from "../utils/helper";
 import { holidays } from "../utils/holidays";
+
+const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));
 ---
 
 <Layout title="How Many Days Until...">
   <main>
-    <div class="mx-2 grid grid-cols-4 gap-4">
-      {
-        holidays.map((item) => (
-          <a href={`/${item.key}`} class="btn">
-            {formatKey(item.key)}
-          </a>
-        ))
-      }
+    <div class="mx-2">
+      <ul class="grid grid-cols-4 gap-3">
+        {sorted.map((holiday) => <Card holiday={holiday} />)}
+      </ul>
     </div>
-
-    <ul>
-      <!-- cards -->
-    </ul>
   </main>
 </Layout>

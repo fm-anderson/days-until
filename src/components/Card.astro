@@ -1,15 +1,25 @@
 ---
-const { href, title, body } = Astro.props;
+import { daysUntil, formatDate, formatKey } from "../utils/helper";
+
+const { holiday } = Astro.props;
+
+const days = daysUntil(new Date(), holiday.date);
+const image = holiday.image ? holiday.image : "/placeholder.webp";
 ---
 
 <li>
-  <a href={"href"}>
-    <h2>
-      {"title"}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {"body"}
-    </p>
-  </a>
+  <a href={holiday.key}
+    ><div class="card image-full card-compact bg-base-100 shadow-xl">
+      <figure>
+        <img src={image} alt=`${holiday.name} Image` />
+      </figure>
+      <div class="card-body">
+        <h2 class="text-xl font-semibold tracking-wide">{holiday.name}</h2>
+        <p>{formatDate(holiday.date)}</p>
+        <div class="card-actions justify-end">
+          <p>{days} days until {formatKey(holiday.key)}</p>
+        </div>
+      </div>
+    </div></a
+  >
 </li>
