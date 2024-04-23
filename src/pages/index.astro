@@ -1,8 +1,11 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+import { getNextSeason } from "../utils/helper";
 import { holidays } from "../utils/holidays";
+import { seasons } from "../utils/seasons";
 
+const nextSeason = getNextSeason(new Date(), seasons);
 const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));
 ---
 
@@ -10,7 +13,10 @@ const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));
   <main>
     <div class="mx-2">
       <ul class="grid grid-cols-4 gap-3">
-        {sorted.map((holiday) => <Card holiday={holiday} />)}
+        <div class="col-span-2 row-span-2">
+          <Card date={nextSeason} isSeason={true} />
+        </div>
+        {sorted.map((holiday) => <Card date={holiday} />)}
       </ul>
     </div>
   </main>
