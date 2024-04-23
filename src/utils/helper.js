@@ -46,3 +46,29 @@ export function formatDate(date) {
 
   return formatter.format(date);
 }
+
+export function getNextSeason(currentDate, seasonsArray) {
+  if (!(currentDate instanceof Date)) {
+    currentDate = new Date(currentDate);
+  }
+
+  const upcomingSeasons = [];
+
+  for (const season of seasonsArray) {
+    for (const year in season.dates) {
+      if (season.dates[year] > currentDate) {
+        upcomingSeasons.push({
+          key: season.key,
+          name: season.name,
+          image: season.image,
+          date: season.dates[year],
+          year: year,
+        });
+      }
+    }
+  }
+
+  upcomingSeasons.sort((a, b) => a.date - b.date);
+
+  return upcomingSeasons.length > 0 ? upcomingSeasons[0] : null;
+}
