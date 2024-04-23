@@ -1,9 +1,9 @@
 ---
 import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
+import seasons from "../utils/seasons";
+import holidays from "../utils/holidays";
 import { getNextSeason } from "../utils/helper";
-import { holidays } from "../utils/holidays";
-import { seasons } from "../utils/seasons";
 
 const nextSeason = getNextSeason(new Date(), seasons);
 const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));

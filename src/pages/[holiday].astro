@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import holidays from "../utils/holidays";
 import { daysUntil, formatDate } from "../utils/helper";
-import { holidays } from "../utils/holidays";
 
 export async function getStaticPaths() {
   return holidays.map((holiday) => ({

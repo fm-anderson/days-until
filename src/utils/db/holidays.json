@@ -1,0 +1,222 @@
+[
+  {
+    "key": "new-years",
+    "name": "New Year's Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": true,
+    "month": 0,
+    "day": 1,
+    "image": "/images/holidays/new-years.webp"
+  },
+  {
+    "key": "mlk-day",
+    "name": "Martin Luther King, Jr. Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 0,
+    "day": 15,
+    "image": "/images/holidays/mlk-day.webp"
+  },
+  {
+    "key": "valentines-day",
+    "name": "Valentine's Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 1,
+    "day": 14,
+    "image": "/images/holidays/valentines-day.webp"
+  },
+  {
+    "key": "presidents-day",
+    "name": "Presidents Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 1,
+    "day": 19,
+    "image": "/images/holidays/presidents-day.webp"
+  },
+  {
+    "key": "international-womens-day",
+    "name": "International Women's Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 2,
+    "day": 8,
+    "image": "/images/holidays/international-womens-day.webp"
+  },
+  {
+    "key": "st-patricks-day",
+    "name": "St. Patrick's Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 2,
+    "day": 17,
+    "image": "/images/holidays/st-patricks-day.webp"
+  },
+  {
+    "key": "earth-day",
+    "name": "Earth Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 3,
+    "day": 22,
+    "image": "/images/holidays/earth-day.webp"
+  },
+  {
+    "key": "cinco-de-mayo",
+    "name": "Cinco de Mayo",
+    "global": false,
+    "countryCode": "US",
+    "fixed": true,
+    "isHoliday": false,
+    "month": 4,
+    "day": 5,
+    "image": "/images/holidays/cinco-de-mayo.webp"
+  },
+  {
+    "key": "memorial-day",
+    "name": "Memorial Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 4,
+    "day": 27,
+    "image": "/images/holidays/memorial-day.webp"
+  },
+  {
+    "key": "juneteenth",
+    "name": "Juneteenth National Independence Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 5,
+    "day": 19,
+    "image": "/images/holidays/juneteenth.webp"
+  },
+  {
+    "key": "independence-day",
+    "name": "Independence Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 6,
+    "day": 4,
+    "image": "/images/holidays/independence-day.webp"
+  },
+  {
+    "key": "labor-day",
+    "name": "Labor Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 8,
+    "day": 2,
+    "image": "/images/holidays/labor-day.webp"
+  },
+  {
+    "key": "columbus-day",
+    "name": "Columbus Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 9,
+    "day": 14,
+    "image": "/images/holidays/columbus-day.webp"
+  },
+  {
+    "key": "indigenous-peoples-day",
+    "name": "Indigenous Peoples' Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 9,
+    "day": 14,
+    "image": "/images/holidays/indigenous-peoples-day.webp"
+  },
+  {
+    "key": "halloween",
+    "name": "Halloween",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 9,
+    "day": 31,
+    "image": "/images/holidays/halloween.webp"
+  },
+  {
+    "key": "veterans-day",
+    "name": "Veterans Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 10,
+    "day": 11,
+    "image": "/images/holidays/veterans-day.webp"
+  },
+  {
+    "key": "thanksgiving",
+    "name": "Thanksgiving Day",
+    "global": false,
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 10,
+    "day": 28,
+    "image": "/images/holidays/thanksgiving.webp"
+  },
+  {
+    "key": "christmas-eve",
+    "name": "Christmas Eve",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 11,
+    "day": 24,
+    "image": "/images/holidays/christmas-eve.webp"
+  },
+  {
+    "key": "christmas",
+    "name": "Christmas Day",
+    "global": true,
+    "countryCode": null,
+    "fixed": false,
+    "isHoliday": true,
+    "month": 11,
+    "day": 25,
+    "image": "/images/holidays/christmas.webp"
+  },
+  {
+    "key": "new-years-eve",
+    "name": "New Year's Eve",
+    "global": true,
+    "countryCode": null,
+    "fixed": true,
+    "isHoliday": false,
+    "month": 11,
+    "day": 31,
+    "image": "/images/holidays/new-years-eve.webp"
+  }
+]

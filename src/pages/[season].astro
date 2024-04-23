@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import seasons from "../utils/seasons";
 import { daysUntil, formatDate } from "../utils/helper";
-import { seasons } from "../utils/seasons";
 
 export async function getStaticPaths() {
   return seasons.map((season) => ({
@@ -19,5 +19,5 @@ const days = daysUntil(new Date(), seasonDate);
 <Layout title={`How Many Days Until ${seasonDetails.name}`}>
   <h1>{seasonDetails.name}</h1>
   <p>{formatDate(seasonDate)}</p>
-  <p>Days until {seasonDetails.name}: {days}</p>
+  <p>Days until {seasonDetails.name}: {days - 1}</p>
 </Layout>
