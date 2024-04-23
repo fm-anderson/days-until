@@ -1,0 +1,23 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { daysUntil, formatDate } from "../utils/helper";
+import { seasons } from "../utils/seasons";
+
+export async function getStaticPaths() {
+  return seasons.map((season) => ({
+    params: { season: season.key },
+  }));
+}
+
+const { season } = Astro.params;
+const currentYear = new Date().getFullYear();
+const seasonDetails = seasons.find((s) => s.key === season);
+const seasonDate = seasonDetails.dates[currentYear];
+const days = daysUntil(new Date(), seasonDate);
+---
+
+<Layout title={`How Many Days Until ${seasonDetails.name}`}>
+  <h1>{seasonDetails.name}</h1>
+  <p>{formatDate(seasonDate)}</p>
+  <p>Days until {seasonDetails.name}: {days}</p>
+</Layout>

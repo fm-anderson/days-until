@@ -1,62 +1,33 @@
 ---
-import { Icon } from "astro-icon/components";
+import NavItem from "./NavItem.astro";
+import { formatKey } from "../utils/helper";
 import { holidays } from "../utils/holidays";
-import { capitalizeFirstLetter } from "../utils/helper";
+import { seasons } from "../utils/seasons";
 ---
 
 <div class="navbar bg-base-100">
   <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <Icon name="tabler:menu-2" size={22} />
-      </div>
-      <ul
-        tabindex="0"
-        class="menu dropdown-content menu-sm z-[1] mt-3 w-52 rounded-box bg-base-100 p-2 shadow"
-      >
-        <li>
-          <p>Holidays</p>
-          <ul class="p-2">
-            {
-              holidays.map((holiday) => (
-                <li>
-                  <a href={`/${holiday.key}`}>
-                    {capitalizeFirstLetter(holiday.key)}
-                  </a>
-                </li>
-              ))
-            }
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <a href="/" class="btn btn-ghost text-xl">DaysUntil</a>
+    <a href="/" class="mr-2 text-xl font-semibold">DaysUntil</a>
+    <NavItem title="Holidays">
+      {
+        holidays.map((holiday) => (
+          <li>
+            <a href={`/${holiday.key}`}>{formatKey(holiday.key)}</a>
+          </li>
+        ))
+      }
+    </NavItem>
+    <NavItem title="Seasons">
+      {
+        seasons.map((season) => (
+          <li>
+            <a href={`/${season.key}`}>{formatKey(season.key)}</a>
+          </li>
+        ))
+      }
+    </NavItem>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="m-1">
-        <span class="flex items-end"
-          ><p>Holidays</p>
-          <Icon name="tabler:chevron-down" size={22} /></span
-        >
-      </div>
-      <ul
-        tabindex="0"
-        class="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
-      >
-        {
-          holidays.map((holiday) => (
-            <li>
-              <a href={`/${holiday.key}`}>
-                {capitalizeFirstLetter(holiday.key)}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </div>
-  <div class="navbar-end">
-    <a class="btn">Search</a>
+  <div class="navbar-end hidden lg:flex">
+    <!-- search? -->
   </div>
 </div>

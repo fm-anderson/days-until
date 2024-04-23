@@ -1,0 +1,19 @@
+---
+import { Icon } from "astro-icon/components";
+const { title } = Astro.props;
+---
+
+<div class="dropdown">
+  <div tabindex="0" role="button" class="m-1">
+    <span class="flex items-end"
+      ><p>{title}</p>
+      <Icon name="tabler:chevron-down" size={22} /></span
+    >
+  </div>
+  <ul
+    tabindex="0"
+    class="menu dropdown-content z-[1] w-52 rounded-box bg-base-100 p-2 shadow"
+  >
+    <slot />
+  </ul>
+</div>

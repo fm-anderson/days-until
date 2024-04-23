@@ -1,17 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { capitalizeFirstLetter } from "../utils/helper";
+import { formatKey } from "../utils/helper";
 import { holidays } from "../utils/holidays";
 ---
 
 <Layout title="How Many Days Until...">
   <main>
-    <h1>Home</h1>
-    <div class="flex gap-2">
+    <div class="mx-2 grid grid-cols-4 gap-4">
       {
         holidays.map((item) => (
           <a href={`/${item.key}`} class="btn">
-            {capitalizeFirstLetter(item.key)}
+            {formatKey(item.key)}
           </a>
         ))
       }

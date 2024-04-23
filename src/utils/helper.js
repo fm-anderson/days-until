@@ -12,15 +12,37 @@ export async function getCurrentDate() {
   }
 }
 
-export function daysUntil(currentDate, targetDate) {
-  const now = new Date(currentDate);
-  const target = new Date(targetDate);
-  const timeDifference = target - now;
-  const days = Math.ceil(timeDifference / (1000 * 60 * 60 * 24));
-  return days;
+export function daysUntil(currentDate, eventDate) {
+  let yearAdjustment = 0;
+  if (eventDate < currentDate) {
+    yearAdjustment = 1;
+  }
+  const nextEventDate = new Date(eventDate.getTime());
+  nextEventDate.setFullYear(eventDate.getFullYear() + yearAdjustment);
+
+  const msPerDay = 24 * 60 * 60 * 1000;
+  const timeDiff = nextEventDate - currentDate;
+  const daysDiff = Math.ceil(timeDiff / msPerDay);
+  return daysDiff;
 }
 
-export function capitalizeFirstLetter(string) {
-  if (!string) return "";
-  return string.charAt(0).toUpperCase() + string.slice(1);
+export function formatKey(key) {
+  if (!key) return "";
+
+  const words = key.split("-");
+  const formattedName = words
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
+  return formattedName;
+}
+
+export function formatDate(date) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "2-digit",
+  });
+
+  return formatter.format(date);
 }
