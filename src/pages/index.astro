@@ -3,16 +3,13 @@ import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import seasons from "../utils/seasons";
 import holidays from "../utils/holidays";
-import { getNextSeason } from "../utils/helper";
+import { getNextSeason, sortByDate } from "../utils/helper";
 
 const nextSeason = getNextSeason(new Date(), seasons);
-// const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));
-const sorted = holidays
-  .filter(
-    (holiday) =>
-      holiday.countryCode === "global" || holiday.countryCode === "US",
-  )
-  .sort((a, b) => new Date(a.date) - new Date(b.date));
+const filtered = holidays.filter(
+  (holiday) => holiday.countryCode === "global" || holiday.countryCode === "US",
+);
+const sorted = sortByDate(filtered);
 ---
 
 <Layout title="How Many Days Until...">

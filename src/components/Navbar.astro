@@ -20,6 +20,7 @@ const countryList = await fetchCountryNamesFromCodes(
       {
         holidays
           .filter((holiday) => holiday.countryCode === "global")
+          .sort((a, b) => new Date(a.date) - new Date(b.date))
           .map((holiday) => (
             <li>
               <a href={`/${holiday.key}`}>{formatKey(holiday.key)}</a>

@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import CountryCard from "../components/CountryCard.astro";
 import Card from "../components/Card.astro";
 import holidays from "../utils/holidays";
-import { daysUntil } from "../utils/helper";
+import { daysUntil, sortByDate } from "../utils/helper";
 
 export async function getStaticPaths() {
   const countryCodes = holidays
@@ -27,6 +27,8 @@ const relevantHolidays = holidays
     ...holiday,
     daysUntil: daysUntil(currentDate, holiday.date),
   }));
+
+const sorted = sortByDate(relevantHolidays);
 ---
 
 <Layout title={`Important Holidays in ${country.toUpperCase()}`}>
@@ -36,7 +38,7 @@ const relevantHolidays = holidays
         <div class="row-span-2 lg:col-span-2">
           <CountryCard code={country} />
         </div>
-        {relevantHolidays.map((holiday) => <Card date={holiday} />)}
+        {sorted.map((holiday) => <Card date={holiday} />)}
       </ul>
     </div>
   </main>

@@ -111,3 +111,7 @@ export async function fetchCountryNamesFromCodes(countryCodes) {
 
   return countryData;
 }
+
+export function sortByDate(items) {
+  return items.sort((a, b) => new Date(a.date) - new Date(b.date));
+}
