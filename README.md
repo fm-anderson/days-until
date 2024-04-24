@@ -2,6 +2,8 @@
 
 **Days Until** is built with [Astro](https://astro.build/), [TailwindCSS](https://tailwindcss.com/), and [DaisyUI](https://daisyui.com/). This project keeps track of the days until various seasonal events and holidays worldwide.
 
+Live Site: https://days-until.netlify.app/
+
 ## Features
 
 - **Dynamic Event Listings**: Displays upcoming seasons and global holidays with countdowns.
