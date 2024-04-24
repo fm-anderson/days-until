@@ -2,7 +2,15 @@
 import NavItem from "./NavItem.astro";
 import seasons from "../utils/seasons";
 import holidays from "../utils/holidays";
-import { formatKey } from "../utils/helper";
+import {
+  formatKey,
+  getCountriesList,
+  fetchCountryNamesFromCodes,
+} from "../utils/helper";
+
+const countryList = await fetchCountryNamesFromCodes(
+  getCountriesList(holidays),
+);
 ---
 
 <div class="navbar bg-base-100">
@@ -22,6 +30,15 @@ import { formatKey } from "../utils/helper";
         seasons.map((season) => (
           <li>
             <a href={`/${season.key}`}>{formatKey(season.key)}</a>
+          </li>
+        ))
+      }
+    </NavItem>
+    <NavItem title="Countries">
+      {
+        countryList.map((country) => (
+          <li>
+            <a href={`/${country.code.toLowerCase()}`}>{country.name}</a>
           </li>
         ))
       }

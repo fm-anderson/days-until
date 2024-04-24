@@ -72,3 +72,36 @@ export function getNextSeason(currentDate, seasonsArray) {
 
   return upcomingSeasons.length > 0 ? upcomingSeasons[0] : null;
 }
+
+export const getCountriesList = (holidays) => {
+  const countryCodes = new Set();
+  holidays.forEach((holiday) => {
+    if (holiday.countryCode) {
+      countryCodes.add(holiday.countryCode);
+    }
+  });
+  return Array.from(countryCodes);
+};
+
+export async function fetchCountryName(countryCodes) {
+  try {
+    const response = await fetch(
+      `${import.meta.env.GET_COUNTRY}${countryCodes}`,
+    ).then((res) => res.json());
+    return response[0].name.common;
+  } catch (error) {
+    console.error("Failed to fetch country name for code:", code, error);
+    return code;
+  }
+}
+
+export async function fetchCountryNamesFromCodes(countryCodes) {
+  const countryData = await Promise.all(
+    countryCodes.map(async (code) => {
+      const name = await fetchCountryName(code);
+      return { code, name };
+    }),
+  );
+
+  return countryData;
+}

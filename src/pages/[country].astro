@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import CountryCard from "../components/CountryCard.astro";
+import Card from "../components/Card.astro";
+import holidays from "../utils/holidays";
+import { daysUntil } from "../utils/helper";
+
+export async function getStaticPaths() {
+  const countryCodes = holidays
+    .filter((h) => h.countryCode)
+    .map((h) => h.countryCode);
+  const uniqueCountryCodes = [...new Set(countryCodes)];
+  return uniqueCountryCodes.map((countryCode) => ({
+    params: { country: countryCode.toLowerCase() },
+  }));
+}
+
+const { country } = Astro.params;
+const currentDate = new Date();
+const relevantHolidays = holidays
+  .filter(
+    (holiday) =>
+      holiday.global ||
+      holiday.countryCode?.toLowerCase() === country.toLowerCase(),
+  )
+  .map((holiday) => ({
+    ...holiday,
+    daysUntil: daysUntil(currentDate, holiday.date),
+  }));
+---
+
+<Layout title={`Important Holidays in ${country.toUpperCase()}`}>
+  <main>
+    <div class="mx-2">
+      <ul class="grid grid-cols-1 gap-3 lg:grid-cols-4">
+        <div class="row-span-2 lg:col-span-2">
+          <CountryCard code={country} />
+        </div>
+        {relevantHolidays.map((holiday) => <Card date={holiday} />)}
+      </ul>
+    </div>
+  </main>
+</Layout>
