@@ -2,8 +2,7 @@
   {
     "key": "new-years",
     "name": "New Year's Day",
-    "global": true,
-    "countryCode": null,
+    "countryCode": "global",
     "fixed": true,
     "isHoliday": true,
     "month": 0,
@@ -11,21 +10,9 @@
     "image": "/images/holidays/new-years.webp"
   },
   {
-    "key": "mlk-day",
-    "name": "Martin Luther King, Jr. Day",
-    "global": false,
-    "countryCode": "US",
-    "fixed": false,
-    "isHoliday": true,
-    "month": 0,
-    "day": 15,
-    "image": "/images/holidays/mlk-day.webp"
-  },
-  {
     "key": "valentines-day",
     "name": "Valentine's Day",
-    "global": true,
-    "countryCode": null,
+    "countryCode": "global",
     "fixed": true,
     "isHoliday": false,
     "month": 1,
@@ -33,21 +20,9 @@
     "image": "/images/holidays/valentines-day.webp"
   },
   {
-    "key": "presidents-day",
-    "name": "Presidents Day",
-    "global": false,
-    "countryCode": "US",
-    "fixed": false,
-    "isHoliday": true,
-    "month": 1,
-    "day": 19,
-    "image": "/images/holidays/presidents-day.webp"
-  },
-  {
     "key": "international-womens-day",
     "name": "International Women's Day",
-    "global": true,
-    "countryCode": null,
+    "countryCode": "global",
     "fixed": true,
     "isHoliday": false,
     "month": 2,
@@ -57,8 +32,7 @@
   {
     "key": "st-patricks-day",
     "name": "St. Patrick's Day",
-    "global": true,
-    "countryCode": null,
+    "countryCode": "global",
     "fixed": true,
     "isHoliday": false,
     "month": 2,
@@ -68,8 +42,7 @@
   {
     "key": "earth-day",
     "name": "Earth Day",
-    "global": true,
-    "countryCode": null,
+    "countryCode": "global",
     "fixed": true,
     "isHoliday": false,
     "month": 3,
@@ -77,9 +50,68 @@
     "image": "/images/holidays/earth-day.webp"
   },
   {
+    "key": "halloween",
+    "name": "Halloween",
+    "countryCode": "global",
+    "fixed": true,
+    "isHoliday": false,
+    "month": 9,
+    "day": 31,
+    "image": "/images/holidays/halloween.webp"
+  },
+  {
+    "key": "christmas-eve",
+    "name": "Christmas Eve",
+    "countryCode": "global",
+    "fixed": true,
+    "isHoliday": false,
+    "month": 11,
+    "day": 24,
+    "image": "/images/holidays/christmas-eve.webp"
+  },
+  {
+    "key": "christmas",
+    "name": "Christmas Day",
+    "countryCode": "global",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 11,
+    "day": 25,
+    "image": "/images/holidays/christmas.webp"
+  },
+  {
+    "key": "new-years-eve",
+    "name": "New Year's Eve",
+    "countryCode": "global",
+    "fixed": true,
+    "isHoliday": false,
+    "month": 11,
+    "day": 31,
+    "image": "/images/holidays/new-years-eve.webp"
+  },
+  {
+    "key": "mlk-day",
+    "name": "Martin Luther King, Jr. Day",
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 0,
+    "day": 15,
+    "image": "/images/holidays/mlk-day.webp"
+  },
+  {
+    "key": "presidents-day",
+    "name": "Presidents Day",
+    "countryCode": "US",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 1,
+    "day": 19,
+    "image": "/images/holidays/presidents-day.webp"
+  },
+  {
     "key": "cinco-de-mayo",
     "name": "Cinco de Mayo",
-    "global": false,
     "countryCode": "US",
     "fixed": true,
     "isHoliday": false,
@@ -90,7 +122,6 @@
   {
     "key": "memorial-day",
     "name": "Memorial Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -101,7 +132,6 @@
   {
     "key": "juneteenth",
     "name": "Juneteenth National Independence Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -112,7 +142,6 @@
   {
     "key": "independence-day",
     "name": "Independence Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -123,7 +152,6 @@
   {
     "key": "labor-day",
     "name": "Labor Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -134,7 +162,6 @@
   {
     "key": "columbus-day",
     "name": "Columbus Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -145,7 +172,6 @@
   {
     "key": "indigenous-peoples-day",
     "name": "Indigenous Peoples' Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -154,20 +180,8 @@
     "image": "/images/holidays/indigenous-peoples-day.webp"
   },
   {
-    "key": "halloween",
-    "name": "Halloween",
-    "global": true,
-    "countryCode": null,
-    "fixed": true,
-    "isHoliday": false,
-    "month": 9,
-    "day": 31,
-    "image": "/images/holidays/halloween.webp"
-  },
-  {
     "key": "veterans-day",
     "name": "Veterans Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -178,7 +192,6 @@
   {
     "key": "thanksgiving",
     "name": "Thanksgiving Day",
-    "global": false,
     "countryCode": "US",
     "fixed": false,
     "isHoliday": true,
@@ -187,36 +200,113 @@
     "image": "/images/holidays/thanksgiving.webp"
   },
   {
-    "key": "christmas-eve",
-    "name": "Christmas Eve",
-    "global": true,
-    "countryCode": null,
-    "fixed": true,
-    "isHoliday": false,
-    "month": 11,
-    "day": 24,
-    "image": "/images/holidays/christmas-eve.webp"
-  },
-  {
-    "key": "christmas",
-    "name": "Christmas Day",
-    "global": true,
-    "countryCode": null,
+    "key": "carnaval",
+    "name": "Carnaval",
+    "countryCode": "BR",
     "fixed": false,
     "isHoliday": true,
-    "month": 11,
-    "day": 25,
-    "image": "/images/holidays/christmas.webp"
+    "month": 1,
+    "day": 12,
+    "image": null
   },
   {
-    "key": "new-years-eve",
-    "name": "New Year's Eve",
-    "global": true,
-    "countryCode": null,
-    "fixed": true,
-    "isHoliday": false,
-    "month": 11,
+    "key": "sexta-feira-santa",
+    "name": "Sexta-feira Santa",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 2,
+    "day": 29,
+    "image": null
+  },
+  {
+    "key": "pascoa",
+    "name": "Domingo de Páscoa",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 2,
     "day": 31,
-    "image": "/images/holidays/new-years-eve.webp"
+    "image": null
+  },
+  {
+    "key": "tiradentes",
+    "name": "Dia de Tiradentes",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 3,
+    "day": 21,
+    "image": null
+  },
+  {
+    "key": "dia-do-trabalhador",
+    "name": "Dia do Trabalhador",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 4,
+    "day": 1,
+    "image": null
+  },
+  {
+    "key": "corpus-christi",
+    "name": "Corpus Christi",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 4,
+    "day": 30,
+    "image": null
+  },
+  {
+    "key": "revolucao-1932",
+    "name": "Revolução Constitucionalista de 1932",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 6,
+    "day": 9,
+    "image": null
+  },
+  {
+    "key": "dia-da-independência",
+    "name": "Dia da Independência",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 8,
+    "day": 7,
+    "image": null
+  },
+  {
+    "key": "nossa-senhora-aparecida",
+    "name": "Nossa Senhora Aparecida",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 9,
+    "day": 12,
+    "image": null
+  },
+  {
+    "key": "dia-de-finados",
+    "name": "Dia de Finados",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 10,
+    "day": 2,
+    "image": null
+  },
+  {
+    "key": "proclamacao-da-republica",
+    "name": "Proclamação da República",
+    "countryCode": "BR",
+    "fixed": false,
+    "isHoliday": true,
+    "month": 10,
+    "day": 15,
+    "image": null
   }
 ]

@@ -18,11 +18,13 @@ const countryList = await fetchCountryNamesFromCodes(
     <a href="/" class="mr-2 text-xl font-semibold">DaysUntil</a>
     <NavItem title="Holidays">
       {
-        holidays.map((holiday) => (
-          <li>
-            <a href={`/${holiday.key}`}>{formatKey(holiday.key)}</a>
-          </li>
-        ))
+        holidays
+          .filter((holiday) => holiday.countryCode === "global")
+          .map((holiday) => (
+            <li>
+              <a href={`/${holiday.key}`}>{formatKey(holiday.key)}</a>
+            </li>
+          ))
       }
     </NavItem>
     <NavItem title="Seasons">

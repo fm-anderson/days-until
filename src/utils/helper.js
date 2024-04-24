@@ -76,7 +76,7 @@ export function getNextSeason(currentDate, seasonsArray) {
 export const getCountriesList = (holidays) => {
   const countryCodes = new Set();
   holidays.forEach((holiday) => {
-    if (holiday.countryCode) {
+    if (holiday.countryCode && holiday.countryCode !== "global") {
       countryCodes.add(holiday.countryCode);
     }
   });
@@ -90,14 +90,20 @@ export async function fetchCountryName(countryCodes) {
     ).then((res) => res.json());
     return response[0].name.common;
   } catch (error) {
-    console.error("Failed to fetch country name for code:", code, error);
-    return code;
+    console.error(
+      "Failed to fetch country name for code:",
+      countryCodes,
+      error,
+    );
+    return countryCodes;
   }
 }
 
 export async function fetchCountryNamesFromCodes(countryCodes) {
+  const filteredCountryCodes = countryCodes.filter((code) => code !== "global");
+
   const countryData = await Promise.all(
-    countryCodes.map(async (code) => {
+    filteredCountryCodes.map(async (code) => {
       const name = await fetchCountryName(code);
       return { code, name };
     }),

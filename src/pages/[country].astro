@@ -20,7 +20,7 @@ const currentDate = new Date();
 const relevantHolidays = holidays
   .filter(
     (holiday) =>
-      holiday.global ||
+      holiday.countryCode === "global" ||
       holiday.countryCode?.toLowerCase() === country.toLowerCase(),
   )
   .map((holiday) => ({

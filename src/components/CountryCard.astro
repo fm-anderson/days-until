@@ -10,7 +10,10 @@ const countryName = await fetchCountryName(code);
   <a
     ><div class="card image-full card-compact bg-base-100 shadow-xl">
       <figure>
-        <img src="/images/countries/us.webp" alt=`flag Image` />
+        <img
+          src=`/images/countries/${code.toLowerCase()}.webp`
+          alt=`${countryName} Flag`
+        />
       </figure>
       <div class="card-body">
         <div class="flex justify-center">
