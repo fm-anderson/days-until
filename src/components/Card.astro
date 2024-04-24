@@ -23,7 +23,9 @@ const textSize = isSeason ? "text-xl" : "";
               Next Season: {formatKey(date.key)}
             </h2>
           ) : (
-            <h2 class="text-xl font-semibold tracking-wide">{date.name}</h2>
+            <h2 class="truncate-11 font-semibold tracking-wide md:text-xl">
+              {date.name}
+            </h2>
           )
         }
         <p class={textSize}>{formatDate(date.date)}</p>

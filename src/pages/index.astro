@@ -12,8 +12,8 @@ const sorted = holidays.sort((a, b) => new Date(a.date) - new Date(b.date));
 <Layout title="How Many Days Until...">
   <main>
     <div class="mx-2">
-      <ul class="grid grid-cols-4 gap-3">
-        <div class="col-span-2 row-span-2">
+      <ul class="grid grid-cols-1 gap-3 lg:grid-cols-4">
+        <div class="row-span-2 lg:col-span-2">
           <Card date={nextSeason} isSeason={true} />
         </div>
         {sorted.map((holiday) => <Card date={holiday} />)}
