@@ -12,10 +12,24 @@ export async function getStaticPaths() {
 const { holiday } = Astro.params;
 const holidayDetails = holidays.find((h) => h.key === holiday);
 const days = daysUntil(new Date(), holidayDetails.date);
+const image = holidayDetails.image || "/placeholder.webp";
 ---
 
 <Layout title=`How Many Days Until ${holidayDetails.name}`>
-  <h1>{holidayDetails.name}</h1>
-  <p>{formatDate(holidayDetails.date)}</p>
-  <p>Days until {holidayDetails.name}: {days}</p>
+  <div class="hero min-h-screen" style=`background-image: url(${image});`>
+    <div class="hero-overlay bg-opacity-70 py-80"></div>
+    <div class="h-full w-full p-3 text-neutral-content">
+      <div class="flex justify-between">
+        <span
+          ><h1 class="mb-2 text-6xl font-bold">{holidayDetails.name}</h1>
+          <p class="mb-2 text-4xl">
+            Days until {holidayDetails.name}: {days}
+          </p></span
+        >
+        <p class="mb-2 text-4xl">
+          {formatDate(holidayDetails.date)}
+        </p>
+      </div>
+    </div>
+  </div>
 </Layout>
