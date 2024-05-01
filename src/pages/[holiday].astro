@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import holidays from "../utils/holidays";
-import { daysUntil, formatDate } from "../utils/helper";
+import { daysUntil, formatDate, getCurrentDate } from "../utils/helper";
 
 export async function getStaticPaths() {
   return holidays.map((holiday) => ({
@@ -11,7 +11,8 @@ export async function getStaticPaths() {
 
 const { holiday } = Astro.params;
 const holidayDetails = holidays.find((h) => h.key === holiday);
-const days = daysUntil(new Date(), holidayDetails.date);
+const currentDate = await getCurrentDate();
+const days = daysUntil(new Date(currentDate), holidayDetails.date);
 const image = holidayDetails.image || "/placeholder.webp";
 ---
 

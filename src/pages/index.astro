@@ -3,9 +3,10 @@ import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 import seasons from "../utils/seasons";
 import holidays from "../utils/holidays";
-import { getNextSeason, sortByDate } from "../utils/helper";
+import { getCurrentDate, getNextSeason, sortByDate } from "../utils/helper";
 
-const nextSeason = getNextSeason(new Date(), seasons);
+const currentDate = await getCurrentDate();
+const nextSeason = getNextSeason(new Date(currentDate), seasons);
 const filtered = holidays.filter(
   (holiday) => holiday.countryCode === "global" || holiday.countryCode === "US",
 );

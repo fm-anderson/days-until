@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import CountryCard from "../components/CountryCard.astro";
 import Card from "../components/Card.astro";
 import holidays from "../utils/holidays";
-import { daysUntil, sortByDate } from "../utils/helper";
+import { daysUntil, getCurrentDate, sortByDate } from "../utils/helper";
 
 export async function getStaticPaths() {
   const countryCodes = holidays
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
 }
 
 const { country } = Astro.params;
-const currentDate = new Date();
+const currentDate = await getCurrentDate();
 const relevantHolidays = holidays
   .filter(
     (holiday) =>
@@ -25,7 +25,7 @@ const relevantHolidays = holidays
   )
   .map((holiday) => ({
     ...holiday,
-    daysUntil: daysUntil(currentDate, holiday.date),
+    daysUntil: daysUntil(new Date(currentDate), holiday.date),
   }));
 
 const sorted = sortByDate(relevantHolidays);

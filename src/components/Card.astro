@@ -1,9 +1,15 @@
 ---
-import { daysUntil, formatDate, formatKey } from "../utils/helper";
+import {
+  daysUntil,
+  formatDate,
+  formatKey,
+  getCurrentDate,
+} from "../utils/helper";
 
 const { date, isSeason } = Astro.props;
 
-const daysUntilDate = daysUntil(new Date(), date.date);
+const currentDate = await getCurrentDate();
+const daysUntilDate = daysUntil(new Date(currentDate), date.date);
 const image = date.image || "/placeholder.webp";
 
 const days = isSeason ? daysUntilDate - 1 : daysUntilDate;
